@@ -77,7 +77,7 @@ a:hover {
     font-weight:bold;
     color: #FF1493;			/*文字色*/
 	position: absolute;
-	left: 300px;		/*ヘッダーブロックに対して右から0pxの位置に配置*/
+	left: 350px;		/*ヘッダーブロックに対して右から0pxの位置に配置*/
 	bottom: 20px;	/*ヘッダーブロックに対して下から0pxの位置に配置*/
 }
 
