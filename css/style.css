@@ -73,11 +73,12 @@ a:hover {
 #header h11 {
 	font-size: 40px;		/*文字サイズ*/
 	line-height: 20px;	/*行間*/
-	font-weight: normal;	/*hタグのデフォルトの太字を標準に。太字がいいならこの１行削除。*/
-	color: #FFFFFF;			/*文字色*/
+    font-family:富士ポップ;
+    font-weight:bold;
+    color: #FF1493;			/*文字色*/
 	position: absolute;
 	right: 0px;		/*ヘッダーブロックに対して右から0pxの位置に配置*/
-	bottom: 5px;	/*ヘッダーブロックに対して下から0pxの位置に配置*/
+	bottom: 8px;	/*ヘッダーブロックに対して下から0pxの位置に配置*/
 }
 
 #header h1 {
