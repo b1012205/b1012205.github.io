@@ -1,0 +1,517 @@
+@charset "shift_jis";
+
+/*
+---------------------------------------------------------------------------
+■制作元：テンプレートパーティー
+■URL：http://template-party.com/
+---------------------------------------------------------------------------*/
+
+body {
+	color: #666666;	/*全体の文字色*/
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font: 75%/2 "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	background: #e6dfd3 url(../images/bg.jpg) repeat-x center top;	/*背景色、背景画像の設定＆X軸(横軸)にリピート＆中央上部基準に並べる*/
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	list-style-type: none;
+}
+img {
+	border: none;
+}
+input,textarea,select {
+	font-size: 1em;
+}
+form {
+	margin: 0px;
+}
+table {
+	border-collapse:collapse;
+	font-size: 100%;
+	border-spacing: 0;
+}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #666666;	/*リンクテキストの文字色*/
+}
+a:hover {
+	color: #D8747E;	/*マウスオン時の文字色*/
+	text-decoration: none;	/*マウスオン時に下線を消す設定。残したままがいいならこの１行削除。*/
+}
+
+/*コンテナー（HPを囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	text-align: left;
+	width: 1000px;	/*コンテナー幅*/
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*ヘッダー（ロゴなどが入っている最上段ブロック）
+---------------------------------------------------------------------------*/
+#header {
+	text-align: left;
+	height: 90px;	/*ヘッダーの高さ*/
+	width: 100%;
+	position: relative;
+}
+/*ロゴ画像設定*/
+#header #logo {
+	position: absolute;
+	left: 0px;	/*ヘッダーブロックに対して左から0pxの位置に配置*/
+	top: 20px;	/*ヘッダーブロックに対して上から20pxの位置に配置*/
+}
+/*h1見出しタグ設定*/
+#header h1 {
+	font-size: 9px;		/*文字サイズ*/
+	line-height: 20px;	/*行間*/
+	font-weight: normal;	/*hタグのデフォルトの太字を標準に。太字がいいならこの１行削除。*/
+	color: #FFFFFF;			/*文字色*/
+	position: absolute;
+	right: 0px;		/*ヘッダーブロックに対して右から0pxの位置に配置*/
+	bottom: 0px;	/*ヘッダーブロックに対して下から0pxの位置に配置*/
+}
+#header h1 a {
+	text-decoration: none;
+	color: #FFFFFF;	/*文字色*/
+}
+/*「カートにいれる」ボタン設定*/
+#header #cart {
+	position: absolute;
+	top: 0px;	/*ヘッダーブロックに対して上から0pxの位置に配置*/
+	right: 0px;	/*ヘッダーブロックに対して右から0pxの位置に配置*/
+}
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*メニュー全体のブロック*/
+ul#menu {
+	line-height: 34px;
+	height: 34px;
+	background: url(../images/menu_line.gif) no-repeat left center;	/*一番左のメニュー間ライン*/
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 1px;
+	margin-bottom: 10px;
+}
+/*メニュー１個あたりの設定*/
+ul#menu li {
+	float: left;
+	background: url(../images/menu_line.gif) no-repeat right center;	/*各メニューごとの右側のライン*/
+}
+ul#menu li a {
+	text-decoration: none;
+	text-align: center;	/*文字をセンタリング*/
+	width: 166px;		/*メニュー１個あたりの幅*/
+	display: block;
+}
+ul#menu li a:hover {
+	background: #eeeeee url(../images/menu_line.gif) no-repeat right center;
+	color: #666;		/*マウスオン時の文字色*/
+	font-weight: bold;	/*マウスオン時に文字を太字にする。通常のままがいいならこの１行削除。*/
+}
+
+/*コンテンツ（３カラムのブロックとフッターを囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	clear: left;
+	width: 100%;
+	background: url(../images/container_bg.jpg) repeat-y;	/*左右のブロックの枠画像の読み込み＆縦軸にリピート*/
+}
+/*２カラム使用時の設定*/
+#c2 #contents {
+	background: url(../images/container_bg_c2.jpg) repeat-y;
+}
+
+/*メイン、サブを囲むブロック
+---------------------------------------------------------------------------*/
+#contentsin {
+	width: 780px;	/*ブロック幅*/
+	float: left;	/*左側に回り込みさせる設定*/
+}
+/*２カラム使用時の設定*/
+#c2 #contentsin {
+	width: 100%;
+	float: none;
+}
+
+/*メインコンテンツ（中央ブロック）
+---------------------------------------------------------------------------*/
+#main {
+	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
+	width: 560px;	/*コンテンツ幅*/
+}
+/*２カラム使用時の設定*/
+#c2 #main {
+	width: 780px;
+}
+/*h2タグ設定*/
+#main h2 {
+	font-size: 100%;
+	clear: both;
+	width: 550px;
+	color: #FFFFFF;	/*文字色*/
+	background: #D8747E url(../images/main_titlebg.gif) repeat-x;
+	line-height: 44px;
+	height: 44px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+/*２カラム使用時の設定*/
+#c2 #main h2 {
+	width: 770px;
+}
+/*段落タグの余白設定*/
+#main p {
+	padding: 0.5em 10px 1em;	/*左から、上、左右、下への余白*/
+}
+/*段落タグの左右の余白をなくす設定*/
+#main p.img {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+/*サブコンテンツ（左側ブロック）
+---------------------------------------------------------------------------*/
+#sub {
+	float: left;	/*contentsinブロック内でサブコンテンツを左(left)に回り込み*/
+	width: 200px;	/*ブロック幅*/
+	padding: 0px 5px;	/*左から、上下、左右への余白*/
+	border-top: 5px solid #484848;	/*コンテンツ最上部の横線の幅、線種、色*/
+}
+
+/*サブメニュー（「Sub Menu」とある両サイドブロックのメニュー）
+---------------------------------------------------------------------------*/
+/*メニュー１個あたりの設定*/
+ul.menu li {
+	border-bottom: 1px dashed #484848;	/*メニューごとの下線の幅、線種、色*/
+}
+ul.menu li.last {
+	border-bottom: none;	/*メニュー下のラインを消す*/
+}
+ul.menu li a {
+	text-decoration: none;
+	display: block;
+	width: 185px;
+	padding: 3px 5px 3px 10px;
+	background: #FFFFFF;	/*背景色*/
+}
+ul.menu li a:hover {
+	background: #eeeeee;	/*マウスオン時の背景色*/
+	color: #666;			/*マウスオン時の文字色*/
+	font-weight: bold;		/*マウスオン時に太字にする設定。通常のままがいいならこの１行削除。*/
+}
+
+/*サイドコンテンツ（右側ブロック）
+---------------------------------------------------------------------------*/
+#side {
+	float: right;	/*右側に回り込み*/
+	width: 200px;	/*ブロック幅*/
+	padding: 0px 5px;	/*左から、上下、左右への余白*/
+	border-top: 5px solid #484848;	/*コンテンツ最上部の横線の幅、線種、色*/
+}
+/*２カラム使用時の設定*/
+#c2 #side {
+	display: none;
+}
+
+/*サブ、サイドコンテンツ（左右ブロック）共通
+---------------------------------------------------------------------------*/
+/*h3タグ設定*/
+#sub h3,
+#side h3 {
+	clear: both;
+	width: 200px;
+	color: #FFF;			/*文字色*/
+	background: #D8747E;	/*背景色*/
+	text-align: center;		/*文字をセンタリング*/
+	font-size: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/*段落タグの余白設定*/
+#sub p,
+#side p {
+	padding: 0.5em 0px 1em;	/*左から、上、左右、下への余白*/
+}
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+#main .new {
+	overflow: auto;
+	height: 150px;
+	width: 548px;
+	padding-left: 10px;
+	background: #FFFFFF;	/*背景色*/
+	border-right: 1px solid #a2a2a2;	/*右側の線の幅、線種、色*/
+	border-bottom: 1px solid #a2a2a2;	/*下側の線の幅、線種、色*/
+	border-left: 1px solid #a2a2a2;		/*左側の線の幅、線種、色*/
+}
+/*２カラム使用時の設定*/
+#c2 #main .new {
+	width: 768px;
+}
+#main .new dl {
+	clear: left;
+	width: 528px;
+	border-bottom: 1px solid #cccccc;	/*各記事ごとの下線の幅、線種、色*/
+	overflow: hidden;
+}
+/*２カラム使用時の設定*/
+#c2 #main .new dl {
+	width: 748px;
+}
+#main .new dt {
+	font-weight: bold;	/*日付を太字にする設定。通常がいいならこの１行削除。*/
+	float: left;
+	width: 100px;
+}
+#main .new dd {
+	float: left;
+	width: 428px;
+}
+/*２カラム使用時の設定*/
+#c2 #main .new dd {
+	width: 548px;
+}
+#main .new dd img {
+	vertical-align: middle;
+}
+*html #main .new dd img {
+	margin-top:0.5em;
+	vertical-align: baseline;
+}
+
+/*フッター
+---------------------------------------------------------------------------*/
+#footer {
+	clear: both;
+	width: 100%;
+	text-align: center;	/*文字をセンタリング*/
+	color: #FFFFFF;		/*文字色*/
+	background: url(../images/footer_bg.jpg) no-repeat center top;	/*背景画像の読み込み*/
+	padding-top: 15px;
+}
+/*２カラム使用時の設定*/
+#c2 #footer {
+	background: url(../images/footer_bg_c2.jpg) no-repeat center top;
+}
+#footer a {
+	text-decoration: none;
+	color: #FFFFFF;	/*文字色*/
+}
+
+/*box1(subとsideブロック内)
+---------------------------------------------------------------------------*/
+#sub .box1,
+#side .box1 {
+	border-bottom: 1px solid #a2a2a2;		/*下側の線の幅、線種、色*/
+	background: #FFFFFF;	/*背景色*/
+	padding: 5px;			/*ボックス内の余白*/
+	font-size: 11px;		/*文字サイズ*/
+	line-height: 1.6;		/*行間*/
+	width: 190px;			/*ボックス幅*/
+	overflow: hidden;
+}
+#sub .box1 p,
+#side .box1 p {
+	padding: 0px;
+}
+#sub .box1 p.img,
+#side .box1 p.img {
+	float: left;	/*画像を左側に回り込みさせる設定*/
+}
+#sub .box1 p.img a img,
+#side .box1 p.img a img {
+	margin-right: 5px;	/*画像の右側にスペースをあける*/
+	border: 1px solid #D3D3D3;	/*画像の枠線の幅、線種、色*/
+}
+#sub .box1 p.img a:hover img,
+#side .box1 p.img a:hover img {
+	border: 1px solid #333333;	/*マウスオン時の枠線の幅、線種、色*/
+}
+#sub .box1 strong,
+#side .box1 strong {
+	color: #D8747E;	/*ボックス内の太字(strong)設定の文字色*/
+}
+#sub .box1 strong a,
+#side .box1 strong a {
+	color: #D8747E;	/*ボックス内の太字(strong)にリンク設定をした際の文字色*/
+}
+#sub .box1 strong a:hover,
+#side .box1 strong a:hover {
+	color: #666666;	/*ボックス内の太字(strong)にリンク設定をした際のマウスオン時の文字色*/
+}
+
+/*box1(mainブロック内)
+---------------------------------------------------------------------------*/
+#main .box1 {
+	background: #FFFFFF;	/*背景色*/
+	padding: 5px;			/*ボックス内の余白*/
+	font-size: 11px;		/*文字サイズ*/
+	line-height: 1.6;		/*行間*/
+	width: 540px;			/*ボックス幅*/
+	overflow: hidden;
+	margin-bottom: 1em;
+	border: 5px solid #484848;	/*枠線の幅、線種、色*/
+}
+/*２カラム使用時の設定*/
+#c2 #main .box1 {
+	width: 760px;		/*ボックス幅*/
+}
+#main .box1 p {
+	padding: 0px;
+}
+#main .box1 p.img {
+	float: left;	/*画像を左側に回り込みさせる設定*/
+}
+#main .box1 p.img img {
+	margin-right: 5px;	/*画像の右側にスペースをあける*/
+	border: 1px solid #D3D3D3;	/*画像の枠線の幅、線種、色*/
+}
+#main .box1 p.img a:hover img {
+	border: 1px solid #333333;	/*マウスオン時の枠線の幅、線種、色*/
+}
+#main .box1 h3 {
+	color: #D8747E;		/*ボックス内のh3タグの文字色*/
+	font-size: 120%;	/*文字間にすこしゆとりを出す設定。通常がいいならこの１行削除。*/
+}
+#main .box1 h3 a {
+	color: #D8747E;	/*ボックス内のh3タグにリンク設定をした際の文字色*/
+}
+#main .box1 h3 a:hover {
+	color: #666666;	/*ボックス内のh3タグにリンク設定をした際のマウスオン時の文字色*/
+}
+
+/*テーブル１
+---------------------------------------------------------------------------*/
+/*テーブル全体の設定*/
+.ta1 {
+	border: 5px solid #484848;	/*テーブルの外側の枠線の幅、線種、色*/
+	width: 560px;		/*テーブル幅*/
+	background: #FFF;	/*背景色*/
+}
+/*２カラム使用時の設定*/
+#c2 .ta1 {
+	width: 780px;		/*テーブル幅*/
+}
+.ta1 td, .ta1 th{
+	border: 1px solid #a2a2a2;	/*テーブル内の枠線の幅、線種、色*/
+	line-height: 2;
+}
+/*テーブル内のtd幅(右側)*/
+.ta1 td{
+	width: 337px;
+	padding: 10px;
+	vertical-align: top;
+}
+/*２カラム使用時の設定*/
+#c2 .ta1 td{
+	width: 557px;
+}
+/*テーブル内のth(左側)*/
+.ta1 th{
+	width: 180px;
+	padding: 10px;
+	text-align: center;
+	background: #ebebeb;	/*背景色*/
+}
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi{
+	width: auto;
+	text-align: left;
+	background: #efc7cb;	/*背景色*/
+}
+
+/*トップページのスライドショー
+---------------------------------------------------------------------------*/
+#mainimg {
+	position: relative;
+	height: 260px;
+	width: 1000px;
+	clear: left;
+	margin-bottom: 10px;
+}
+#mainimg .slide_file {
+	display: none;
+}
+#slide_image {
+	z-Index:2;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+#slide_image2 {
+	z-Index:1;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+
+/*サムネイルスライドショー
+---------------------------------------------------------------------------*/
+#thumbnail {
+	overflow: hidden;
+	font-size: 10px;
+	height: 120px;
+	width: 548px;
+	position: relative;
+}
+#thumbnail a img {
+	border: 1px solid #CCC;
+}
+#thumbnail a:hover img {
+	border: 1px solid #5362ad;
+}
+#thumbnail a {
+	display: block;
+	float: left;
+	width: 100px;
+	padding-right: 5px;
+	padding-left: 5px;
+	text-align: center;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {
+	background-color: #FFFFFF;
+}
+.mb1em {
+	margin-bottom: 1em;
+}
+.clear {
+	clear: both;
+}
+ul.disc {
+	padding: 0em 25px 1em;
+	list-style: disc;
+}
+.color1 {
+	color: #D8747E;
+}
+.c {
+	text-align: center;
+}
+.pr {
+	font-size: 10px;
+}
+.box {
+	background: #FFFFFF;
+	padding: 5px !important;
+	border: 1px solid #a2a2a2;
+}
+.osusume {
+	background: #FFFFFF url(../images/icon_osusume.gif) no-repeat right bottom !important;
+}
+.soldout {
+	background: #FFFFFF url(../images/icon_soldout.gif) no-repeat right bottom !important;
+}
