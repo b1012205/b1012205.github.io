@@ -71,7 +71,7 @@ a:hover {
 }
 /*h1見出しタグ設定*/
 #header h11 {
-	font-size: 10px;		/*文字サイズ*/
+	font-size: 50px;		/*文字サイズ*/
 	line-height: 20px;	/*行間*/
 	font-weight: normal;	/*hタグのデフォルトの太字を標準に。太字がいいならこの１行削除。*/
 	color: #FFFFFF;			/*文字色*/
