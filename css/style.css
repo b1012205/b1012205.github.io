@@ -70,6 +70,16 @@ a:hover {
 	top: 5px;	/*ヘッダーブロックに対して上から20pxの位置に配置*/
 }
 /*h1見出しタグ設定*/
+#header h11 {
+	font-size: 10px;		/*文字サイズ*/
+	line-height: 20px;	/*行間*/
+	font-weight: normal;	/*hタグのデフォルトの太字を標準に。太字がいいならこの１行削除。*/
+	color: #FFFFFF;			/*文字色*/
+	position: absolute;
+	right: 0px;		/*ヘッダーブロックに対して右から0pxの位置に配置*/
+	bottom: 0px;	/*ヘッダーブロックに対して下から0pxの位置に配置*/
+}
+
 #header h1 {
 	font-size: 9px;		/*文字サイズ*/
 	line-height: 20px;	/*行間*/
