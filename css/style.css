@@ -260,8 +260,8 @@ ul.menu li a:hover {
 	overflow: auto;
 	height: 150px;
 	width: 548px;
-    bottom: 20px;
 	padding-left: 10px;
+    padding-bottom: 10px;
 	background: #FFFFFF;	/*背景色*/
 	border-right: 1px solid #a2a2a2;	/*右側の線の幅、線種、色*/
 	border-bottom: 1px solid #a2a2a2;	/*下側の線の幅、線種、色*/
