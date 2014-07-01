@@ -1,1 +1,146 @@
-aiueo
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>sample</title>
+    </head>
+    <body bgcolor="pink">
+        <?php
+            //    $n=PHP_EOL;
+            $n='</br>';
+            $c='    ';
+            $count=0;
+            //初期値
+            /*
+             $x0=1;
+             
+             $x1_1=1;
+             $x1_2=0.5;
+             $x1_3=-0.2;
+             $x1_4=-1.3;
+             
+             $w0=0.2;
+             $w1=0.3;
+             
+             $p=0.5;
+             
+             */
+        
+        $x0=$_POST["x0f"];
+        $x1_1=$_POST["x1_1f"];
+        $x1_2=$_POST["x1_2f"];
+        $x1_3=$_POST["x1_3f"];
+        $x1_4=$_POST["x1_4f"];
+        $w0=$_POST["w0f"];
+        $w1=$_POST["w1f"];
+        $p=$_POST["pf"];
+        
+        $count=null;
+        $hantei=null;
+        $gx=array();
+        //g(x)を求める式
+        //$gx=$w1*$x1+$w0;
+        
+        //    echo $x0,$x1_1,$x1_2,$x1_3,$x1_4,$w0,$w1,$p;
+        // if($x0!=null and $x1_1!=null and $x1_2!=null and $x1_3!=null and $x1_4!=null and $w0=null and $w1!=null and $p!=null){
+        while(1){
+            
+            $count=$count+1;
+            if($count>30){break;}
+            //表示用
+            //フィールドの作成
+            echo 'クラス'.$c.'x0'.$c.'x1'.$c.'w0'.$c.'  w1'.$c.' g(x)'.$c.'判定'.$n;
+            //実際の値の代入
+            
+            //クラス１一回目の計算
+            $gx[0]=$w1*$x1_1+$w0;
+            if($gx[0]>0){
+                $hantei='○';
+            }else{
+                $hantei='×';
+            }
+            echo sprintf("%-10s","1");
+            echo sprintf("%-6s",$x0);
+            echo sprintf("%-6s",$x1_1);
+            echo sprintf("%-8s",$w0);
+            echo sprintf("%-7s",$w1);
+            echo sprintf("%-9s",$gx[0]);
+            echo $hantei.$n;
+            //    echo '1     '.$c.$x0.$c.$x1_1.$c.$w0.$c.$w1.$c.$gx.$c.'  '.$hantei.$n;
+            //    echo '1     '.$c.$x0.$c.$x1_1.$c.$w0.$c.$w1.$c.$gx.$c.$hantei.$n;
+            
+            
+            if($gx[0]<0){
+                $w0=$w0+($p*$x0);
+                $w1=$w1+($p*$x1_1);
+            }
+            
+            
+            //クラス１二回目の計算
+            $gx[1]=$w1*$x1_2+$w0;
+            if($gx[1]>0){
+                $hantei='○';
+            }else{
+                $hantei='×';
+            }
+            echo sprintf("%-10s","1");
+            echo sprintf("%-6s",$x0);
+            echo sprintf("%-6s",$x1_2);
+            echo sprintf("%-8s",$w0);
+            echo sprintf("%-7s",$w1);
+            echo sprintf("%-9s",$gx[1]);
+            echo $hantei.$n;
+            
+            
+            if($gx[1]<0){
+                $w0=$w0+($p*$x0);
+                $w1=$w1+($p*$x1_2);
+            }
+            
+            
+            //クラス２一回目の計算
+            $gx[2]=$w1*$x1_3+$w0;
+            if($gx[2]<0){
+                $hantei='○';
+            }else{
+                $hantei='×';
+            }
+            echo sprintf("%-10s","2");
+            echo sprintf("%-6s",$x0);
+            echo sprintf("%-6s",$x1_3);
+            echo sprintf("%-8s",$w0);
+            echo sprintf("%-7s",$w1);
+            echo sprintf("%-9s",$gx[2]);
+            echo $hantei.$n;
+            
+            if($gx[2]>0){
+                $w0=$w0-($p*$x0);
+                $w1=$w1-($p*$x1_3);
+            }
+            
+            //クラス２二回目の計算
+            $gx[3]=$w1*$x1_4+$w0;
+            if($gx[3]<0){
+                $hantei='○';
+            }else{
+                $hantei='×';
+            }
+            echo sprintf("%-10s","2");
+            echo sprintf("%-6s",$x0);
+            echo sprintf("%-6s",$x1_3);
+            echo sprintf("%-8s",$w0);
+            echo sprintf("%-7s",$w1);
+            echo sprintf("%-9s",$gx[3]);
+            echo $hantei.$n.$n;
+            
+            if($gx[3]>0){
+                $w0=$w0-($p*$x0);
+                $w1=$w1-($p*$x1_4);
+            }
+            if($gx[0]>0 and $gx[1]>0 and $gx[2]<0 and $gx[3]<0){
+                break;
+            }
+        }
+        
+            ?>
+    </body>
+</html>
