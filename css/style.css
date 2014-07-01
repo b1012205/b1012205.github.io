@@ -67,7 +67,7 @@ a:hover {
 #header #logo {
 	position: absolute;
 	left: 0px;	/*ヘッダーブロックに対して左から0pxの位置に配置*/
-	top: 20px;	/*ヘッダーブロックに対して上から20pxの位置に配置*/
+	top: 5px;	/*ヘッダーブロックに対して上から20pxの位置に配置*/
 }
 /*h1見出しタグ設定*/
 #header h1 {
