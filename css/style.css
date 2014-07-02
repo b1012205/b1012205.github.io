@@ -158,7 +158,7 @@ ul#menu li a:hover {
 ---------------------------------------------------------------------------*/
 #main {
 	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
-	width: 700px;	/*コンテンツ幅*/
+	width: 560px;	/*コンテンツ幅*/
 }
 
 /*２カラム使用時の設定*/
@@ -190,6 +190,43 @@ ul#menu li a:hover {
 	padding-right: 0px;
 	padding-left: 0px;
 }
+
+
+#main2 {
+	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
+	width: 560px;	/*コンテンツ幅*/
+}
+
+/*２カラム使用時の設定*/
+#c2 #main2 {
+	width: 780px;
+}
+/*h2タグ設定*/
+#main2 h2 {
+	font-size: 100%;
+	clear: both;
+	width: 550px;
+	color: #FFFFFF;	/*文字色*/
+	background: #D8747E url(../images/main_titlebg.gif) repeat-x;
+	line-height: 44px;
+	height: 44px;
+	overflow: hidden;
+	padding-left: 10px;
+}
+/*２カラム使用時の設定*/
+#c2 #main2 h2 {
+	width: 770px;
+}
+/*段落タグの余白設定*/
+#main2 p {
+	padding: 0.5em 10px 1em;	/*左から、上、左右、下への余白*/
+}
+/*段落タグの左右の余白をなくす設定*/
+#main2 p.img {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
 
 /*サブコンテンツ（左側ブロック）
 ---------------------------------------------------------------------------*/
