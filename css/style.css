@@ -194,12 +194,12 @@ ul#menu li a:hover {
 
 #main2 {
 	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
-	width: 560px;	/*コンテンツ幅*/
+	width: 700px;	/*コンテンツ幅*/
 }
 
 /*２カラム使用時の設定*/
 #c2 #main2 {
-	width: 900px;
+	width: 780px;
 }
 /*h2タグ設定*/
 #main2 h2 {
