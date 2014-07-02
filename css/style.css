@@ -160,6 +160,11 @@ ul#menu li a:hover {
 	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
 	width: 560px;	/*コンテンツ幅*/
 }
+#main2 {
+	float: right;	/*contentsinブロック内でメインコンテンツを右(right)に回り込み*/
+	width: 900px;	/*コンテンツ幅*/
+}
+
 /*２カラム使用時の設定*/
 #c2 #main {
 	width: 780px;
