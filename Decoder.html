@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+            <title>AIVDM Decoder</title>
+            </head>
+    
+    <body>
+        
+        <center>
+            <br/>
+            <table border >
+                <tr align="center">
+                    <th bgcolor="black"><font color="#f0f8ff">AIVDM Message</font></th>
+                </tr>
+                <tr align="center">
+                    <td bgcolor="lightcyan"><br/><form method="GET" action="" name="form1" onSubmit="check();return false;"><input type="text" name="aivdmfield" value="!AIVDM,1,1,,A,15D3W6002qb79QNGmO5SEBn60<1@,0*25" style="text-align: center; font-size:12px; width:250px;"><br/><br/><input type="submit" value="送信">　<BUTTON type="reset">初期値に戻す</BUTTON>　</td>
+                </tr>
+            </table>
+            
+            <br/>
+            <br/>
+            
+            
+            
+            <table border="3" width="100%" cellpadding="3">
+                <tr align="center">
+                    <th bgcolor="#00ffff">Message Type</th>
+                    <td bgcolor="lightcyan"><input type="text" name="type" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Repeat Indicator</th>
+                    <td bgcolor="lightcyan"><input type="text" name="repeat" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">MMSI</th>
+                    <td bgcolor="lightcyan"><input type="text" name="mmsi" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Navigation Status</th>
+                    <td bgcolor="lightcyan"><input type="text" name="status" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Rate of Turn (ROT)</th>
+                    <td bgcolor="lightcyan"><input type="text" name="turn" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Speed Over Ground (SOG)</th>
+                    <td bgcolor="lightcyan"><input type="text" name="speed" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Position Accuracy</th>
+                    <td bgcolor="lightcyan"><input type="text" name="accuracy" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Longitude</th>
+                    <td bgcolor="lightcyan"><input type="text" name="lon" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Latitude</th>
+                    <td bgcolor="lightcyan"><input type="text" name="lat" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Course Over Ground (COG)</th>
+                    <td bgcolor="lightcyan"><input type="text" name="course" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">True Heading (HDG)</th>
+                    <td bgcolor="lightcyan"><input type="text" name="heading" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+                <tr align="center">
+                    <th bgcolor="#00ffff">Time Stamp</th>
+                    <td bgcolor="lightcyan"><input type="text" name="second" ReadOnly="TRUE" style="text-align: center;"></td>
+                </tr>
+            </table>
+            
+            
+            
+            
+            
+            
+        </center>
+        
+        
+        
+    </body>
+    
+    
+</html>
+
+<script>
+    
+    function check(){
+        var aivdm = document.form1.aivdmfield.value;
+        var findStart; //MMSIが含まれる部分の最初の","
+        var findEnd; //MMSIが含まれる部分の最後の","
+        var i;
+        var fromindex=0;
+        var mmsiHEX; //MMSI(文字)
+        var mmsiBINA = ""; //MMSI(2進数)
+        var mmsiArray = new Array(27); //MMSI(2進数にするために使う)
+        var type;
+        var mmsi; //完成系のmmsiが入る変数
+        var repeat; //リピートインジケータが入る変数
+        var status; //ナビゲーションステータスが入る変数
+        var statusmsg; //ナビゲーションステータス（文字）が入る変数
+        var turn; //ターンレートが入る変数(回頭角速度)
+        var speed; //対地速度が入る変数(ノット)
+        var accuracy; //
+        var lon; //経度が入る変数
+        var lat; //緯度が入る変数
+        var course;
+        var heading;
+        var second;
+        var maneuver;
+        
+        
+        find = aivdm.indexOf(","); // ","がある場所を頭文字を０番目として何番目にあるかを格納する
+        for(i=0;i<5;i++){
+            findStart = aivdm.indexOf(",",fromindex); //MMSIが含まれる部分の最初の","の場所を格納する
+            fromindex=findStart+1;
+        }
+        fromindex=0; //検索ポイントの初期化
+        for(i=0;i<6;i++){
+            findEnd = aivdm.indexOf(",",fromindex); //MMSIが含まれる部分の最後の","の場所を格納する
+            fromindex=findEnd+1;
+        }
+        
+        mmsiHEX = aivdm.slice(findStart+1,findEnd); //AIVDMメッセージからMMSIが含まれる部分の文字列を抜き取り格納する
+        
+        for(i=0;i<28;i++){
+            mmsiArray[i] = mmsiHEX.substr(i,1); //この時点でmmsiArrayの配列にそれぞれ文字が格納される
+            mmsiArray[i] = ord(mmsiArray[i]);
+            mmsiArray[i] = mmsiArray[i] - 48;
+            if(mmsiArray[i] >= 40){
+                mmsiArray[i] = mmsiArray[i] - 8; //48を引いた後に40以上であった場合はさらに8引く
+            }
+            mmsiArray[i] = parseInt(mmsiArray[i],10).toString(2); //ここで10進数を2進数に変換
+            mmsiArray[i] = ("00000"+mmsiArray[i]).slice(-6); //左から0埋めにする
+            mmsiBINA = mmsiBINA + mmsiArray[i]; //ひとつの文字列にMMSI(2進数)を格納する
+        }
+        
+        if( mmsiBINA.substr(0,6) == 000001 || mmsiBINA.substr(0,6) == 000010 || mmsiBINA.substr(0,6) == 000011){
+            //    document.form1.field1.value = "成功";
+            repeat = mmsiBINA.substr(6,2); //リピートインジケータを取得
+            mmsi = mmsiBINA.substr(8,30); //MMSI(2進数)を取得
+            mmsi = parseInt(mmsi,2).toString(10); //MMSI(10進数)を取得
+            
+            status = mmsiBINA.substr(38,4);
+            status = parseInt(status,2).toString(10); //ナビゲーションステータスを取得
+            switch (status){
+                case "0":
+                statusmsg="Under way using engine";
+                break;
+                case "1":
+                statusmsg="At anchor";
+                break;
+                case "2":
+                statusmsg="Not under command";
+                break;
+                case "3":
+                statusmsg="Restricted manoeuvrability";
+                break;
+                case "4":
+                statusmsg="Constrained by her draught";
+                break;
+                case "5":
+                $statusmsg="Moored";
+                break;
+                case "6":
+                statusmsg="Aground";
+                break;
+                case "7":
+                statusmsg="Engaged in Fishing";
+                break;
+                case "8":
+                statusmsg="Under way sailing";
+                break;
+                default:
+                statusmsg="No navigations";
+                break;
+            }
+            
+            turn = mmsiBINA.substr(42,8);
+            turn = parseInt(turn,2).toString(10); //ターンレートを取得
+            
+            speed = mmsiBINA.substr(50,10);
+            speed = parseInt(speed,2).toString(10);
+            speed = speed * 0.1; //スピードを取得(ノット)
+            /*
+             このとき、もしスピードが102.2であったら速度が102.2ノット以上であることを表す。
+             */
+            
+            accuracy = mmsiBINA.substr(60,1);
+            accuracy = parseInt(accuracy,2).toString(10); //誤差精度の取得
+            
+            lon = mmsiBINA.substr(61,28);
+            lon = parseInt(lon,2).toString(10);
+            lon = lon / 600000; //経度の取得
+            lon = roundCalc(lon,6,3);
+            
+            lat = mmsiBINA.substr(89,27);
+            lat = parseInt(lat,2).toString(10);
+            lat = lat / 600000; //緯度の取得
+            lat = roundCalc(lat,6,3);
+            
+            course = mmsiBINA.substr(116,12);
+            course = parseInt(course,2).toString(10); //真針路を取得
+            
+            heading = mmsiBINA.substr(128,9);
+            heading = parseInt(heading,2).toString(10); //頭角度を取得
+            
+            second = mmsiBINA.substr(137,6);
+            second = parseInt(second,2).toString(10); //タイムスタンプを取得(0~59)例外あり
+            document.form1.type.value = mmsiHEX.substr(0,1);
+            document.form1.repeat.value = repeat;
+            document.form1.mmsi.value = mmsi;
+            document.form1.status.value = statusmsg;
+            document.form1.turn.value = turn;
+            document.form1.speed.value = speed;
+            document.form1.accuracy.value = accuracy;
+            document.form1.lon.value = lon;
+            document.form1.lat.value = lat;
+            document.form1.course.value = course;
+            document.form1.heading.value = heading;
+            document.form1.second.value = second;
+            
+        }//type1~3終わり
+        
+        
+        
+        
+    }//function終わり
+
+
+function ord(string) {
+    var str = string + '',
+    code = str.charCodeAt(0);
+    if (0xD800 <= code && code <= 0xDBFF) {
+        var hi = code;
+        if (str.length === 1) {
+            return code;
+            
+        }
+        var low = str.charCodeAt(1);
+        return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
+    }
+    if (0xDC00 <= code && code <= 0xDFFF) {
+        return code;
+    }
+    return code;
+}
+
+function roundCalc(value, digit, method) {
+    /*
+     * @param value 数値
+     * @param digit 桁数
+     * @param method '1': 四捨五入, '2': 切り上げ, '3': 切り捨て
+     * @return 計算した値
+     */
+    
+    if ( value == "" || digit == "" || method == "" ) {
+        
+        return value;
+        
+    }
+    
+    var v = Number(value)
+    
+    if ( isNaN(v) )
+    
+    return value;
+    
+    var d = Number(digit)
+    
+    if ( isNaN(d) )
+    
+    return value;
+    
+    var t = "1";
+    
+    for ( i = 0; i < Number(d); i++ ) {
+        
+        t += "0";
+        
+    }
+    
+    var digits = Number(t);
+    
+    // 四捨五入
+    
+    if ( method == "1" )
+    
+    return Math.round(parseFloat(value) * digits) / digits;
+    
+    // 切り上げ
+    
+    if ( method == "2" )
+    
+    return Math.ceil(parseFloat(value) * digits) / digits;
+    
+    // 切り捨て
+    
+    if ( method == "3" )
+    
+    return Math.floor(parseFloat(value) * digits) / digits;
+    
+    return value;
+    
+}
+
+    </script>
+
+
