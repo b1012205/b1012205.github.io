@@ -8,11 +8,45 @@
         <title>b1012205</title>
     </head>
     
+    <style type="text/css">
+        .cal_wrapper {
+            max-width: 800px; /* 最大幅 */
+            min-width: 300px; /* 最小幅 */
+            margin: 2.0833% auto;
+        }
+    
+    .googlecal {
+        position: relative;
+        padding-bottom: 100%; /* 縦横比 */
+        height: 0;
+        overflow: hidden;
+    }
+    .googlecal iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    @media only screen and (min-width: 600px) {
+        /* 画面幅が600px以上の場合の縦横比の指定 */
+        .googlecal {
+            padding-bottom: 75%;
+        }
+    }
+        </style>
+    
     <body>
         
         <center>
             <br/>
-<iframe src="https://www.google.com/calendar/embed?height=250&amp;wkst=1&amp;bgcolor=%2399ffff&amp;src=b1012205marine%40gmail.com&amp;color=%232952A3&amp;src=ja.japanese%23holiday%40group.v.calendar.google.com&amp;color=%23333333&amp;ctz=Asia%2FTokyo" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>
+            <div class="cal_wrapper">
+                <div class="googlecal">
+                    <iframe src="https://www.google.com/calendar/embed?height=250&amp;wkst=1&amp;bgcolor=%2399ffff&amp;src=b1012205marine%40gmail.com&amp;color=%232952A3&amp;src=ja.japanese%23holiday%40group.v.calendar.google.com&amp;color=%23333333&amp;ctz=Asia%2FTokyo" style=" border:solid 1px #777 " width="500" height="400" frameborder="0" scrolling="no"></iframe>
+                </div><!--end of .googlecal-->
+            </div><!--end of .cal_wrapper-->
+
             <br/>
             <a href="Decoder.html">AISデコーダー</a>
         </center>
