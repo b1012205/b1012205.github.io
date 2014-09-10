@@ -11,10 +11,13 @@
     <style type="text/css">
         </style>
     
-    <body>
+    <body onLoad="time();">
         
         <center>
             <br/>
+            <FORM name="rt" mathod=post>
+                <INPUT TYPE=TEXT NAME="tokei" style="width:100%; text-align:center; font-size:20px;">
+            </FORM>
             <br/>
             <a href="./cal/cal.html">スケジュール</a><br/>
             <a href="Decoder.html">AISデコーダー</a><br/>
@@ -27,7 +30,20 @@
 </html>
 
 <script>
-    
+    function time() {
+        var now = new Date();
+        mon = now.getMonth()+1; day = now.getDate();
+        hou = now.getHours(); min = now.getMinutes(); sec = now.getSeconds();
+        year = now.getYear();
+        if (year < 2000) { year += 1900; }
+        if (mon <= "9"){mon = "0" + mon;};
+        if (day <= "9"){day = "0" + day;};
+        if (hou <= "9"){hou = "0" + hou;};
+        if (min <= "9"){min = "0" + min;};
+        if (sec <= "9"){sec = "0" + sec;};
+        document.rt.tokei.value= year +"/"+ mon +"/"+ day +" "+ hou +":"+ min +":"+ sec;
+        setTimeout('time()',1000);
+    }
 
 </script>
 
