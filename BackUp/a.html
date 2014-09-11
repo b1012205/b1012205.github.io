@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="Content-Style-Type" content="text/css" />
+            <meta http-equiv="Content-Script-Type" content="text/javascript" />
+            <title>アコーディオンメニュー</title>
+            <link rel="stylesheet" href="style.css" type="text/css" media="screen,print" />
+            <script type="text/javascript" src="jquery-1.6.min.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                  $("ul.menu").hide();
+                  $("div.category").click(function(){
+                                          $("ul.menu").slideUp();
+                                          if($("+ul",this).css("display")=="none"){
+                                          $("+ul",this).slideDown();
+                                          }
+                                          });
+                  });
+                </script>
+    </head>
+    <body>
+        <div id="container">
+            <ul class="navi">
+                <li>
+                    <div class="category">ファッション</div>
+                    <ul class="menu">
+                        <li><a href="#">アウター</a></li>
+                        <li><a href="#">インナー</a></li>
+                        <li><a href="#">ボトム</a></li>
+                        <li><a href="#">バッグ</a></li>
+                        <li><a href="#">靴</a></li>
+                        <li><a href="#">アクセサリー</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="category">家具・インテリア</div>
+                    <ul class="menu">
+                        <li><a href="#">収納家具</a></li> 
+                        <li><a href="#">ソファ</a></li> 
+                        <li><a href="#">ベッド</a></li> 
+                        <li><a href="#">テーブル</a></li> 
+                        <li><a href="#">チェア</a></li> 
+                        <li><a href="#">照明</a></li> 
+                    </ul> 
+                </li>
+                <li>
+                    <div class="category">ステーショナリー</div>
+                    <ul class="menu"> 
+                        <li><a href="#">ペン・鉛筆</a></li> 
+                        <li><a href="#">ノート</a></li> 
+                        <li><a href="#">ファイル</a></li> 
+                        <li><a href="#">付箋</a></li> 
+                    </ul> 
+                </li> 
+                <li>
+                    <div class="category">生活雑貨</div>
+                    <ul class="menu"> 
+                        <li><a href="#">キッチン用品</a></li> 
+                        <li><a href="#">掃除・洗濯用品</a></li> 
+                        <li><a href="#">バス・トイレ用品</a></li> 
+                        <li><a href="#">その他</a></li> 
+                    </ul> 
+                </li> 
+            </ul>
+        </div>
+    </body>
+</html>

@@ -3,13 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-        <meta http-equiv="Content-Type"
+            <meta http-equiv="Content-Type"
                 content="text/html; charset=iso-2022-jp">
-        <meta http-equiv="Content-Style-Type" content="text/css" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen,print" />
-        <script type="text/javascript" src="jquery-1.6.min.js"></script>
-
         <title>b1012205</title>
     </head>
     
@@ -26,8 +21,7 @@
             <br/>
             <a href="./cal/cal.html">スケジュール</a><br/>
             <a href="Decoder.html">AISデコーダー</a><br/>
-
-<!--
+            
             <a href="javascript:void(0)" id="category_1" onclick="show('1');">
                 <table border="3" width="100%" cellpadding="3">
                     <tr align="center">
@@ -49,54 +43,10 @@
                 【リンクに表示する文字や画像】</a>
             <div id="layer_2" style="display: none;position:relative;margin-left:15pt" class="close">
                 【リンクに隠す文字や画像】 </div>
-!-->
-<div id="container">
-    <ul class="navi">
-        <li>
-            <div class="category">創作物</div>
-            <ul class="menu">
-                <li><a href="./cal/cal.html">スケジュール</a></li>
-                <li><a href="Decoder.html">AISデコーダー</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="category">かてごり２</div>
-            <ul class="menu">
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="category">かてごり３</div>
-            <ul class="menu">
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-                <li><a href="#">hoge</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="category">かてごり４</div>
-            <ul class="menu">
-                <li><a href="#">キッチン用品</a></li>
-                <li><a href="#">掃除・洗濯用品</a></li>
-                <li><a href="#">バス・トイレ用品</a></li>
-                <li><a href="#">その他</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
+
 
         </center>
-        
+            
     </body>
 
 
@@ -129,16 +79,6 @@ function show(inputData) {
         objID.className='close';
     }
 }
-
-$(function(){
-  $("ul.menu").hide();
-  $("div.category").click(function(){
-                          $("ul.menu").slideUp();
-                          if($("+ul",this).css("display")=="none"){
-                          $("+ul",this).slideDown();
-                          }
-                          });
-  });
 
 </script>
 
