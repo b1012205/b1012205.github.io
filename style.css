@@ -39,7 +39,8 @@ li {
 	background-color:#00008b;
 	margin: 1px;
 	line-height:40px;
-	cursor:pointer;	
+	cursor:pointer;
+    border-style: outset;
 }
 
 ul.menu li a{
