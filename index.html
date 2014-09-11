@@ -21,6 +21,30 @@
             <br/>
             <a href="./cal/cal.html">スケジュール</a><br/>
             <a href="Decoder.html">AISデコーダー</a><br/>
+            
+            <a href="javascript:void(0)" id="category_1" onclick="show('1');">
+                <table border="3" width="100%" cellpadding="3">
+                    <tr align="center">
+                        <th bgcolor="black"><font color="white">テスト</font></th>
+                    </tr>
+                </table>
+                </a>
+            <div id="layer_1" style="display: none;position:relative;" class="close">
+                <table border width="100%">
+                    <tr align="center">
+                        <th bgcolor="white"><font color="black">テスト</font></th>
+                    </tr>
+                </table>
+            </div>
+            
+            <br/>
+            
+            <a href="javascript:void(0)" id="category_2" onclick="show('2');">
+                【リンクに表示する文字や画像】</a>
+            <div id="layer_2" style="display: none;position:relative;margin-left:15pt" class="close">
+                【リンクに隠す文字や画像】 </div>
+
+
         </center>
             
     </body>
@@ -43,6 +67,18 @@
         document.rt.tokei.value= year +"/"+ mon +"/"+ day +" "+ hou +":"+ min +":"+ sec;
         setTimeout('time()',1000);
     }
+
+function show(inputData) {
+    var objID=document.getElementById( "layer_" + inputData );
+    var buttonID=document.getElementById( "category_" + inputData );
+    if(objID.className=='close') {
+        objID.style.display='block';
+        objID.className='open';
+    }else{
+        objID.style.display='none';
+        objID.className='close';
+    }
+}
 
 </script>
 
