@@ -40,6 +40,7 @@ li {
 	margin: 1px;
 	line-height:40px;
 	cursor:pointer;
+    text-align: center;
 
     }
 
@@ -47,10 +48,11 @@ ul.menu li a{
 	height: 35px;
 	line-height:35px;
 	display:block;
-	margin-left:20px;
-	text-decoration:none;	
+	text-decoration:none;
+    text-align: center;
 }
 
 ul.menu li{
-	background-color:#EEE8F4;
+	background-color:#f5fffa;
+    text-align: center;
 }
