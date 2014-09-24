@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=iso-2022-jp">
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen,print" />
+        <script type="text/javascript" src="jquery-1.6.min.js"></script>
+
+        <title>国分寺ハヤトの日常</title>
+    </head>
+    
+    <style type="text/css">
+        </style>
+    
+    <body background="" bgcolor="white">
+        <center>
+        <img src="bloglogo.png" style="max-width: 85%;
+            height:auto;
+            " alt="hayatoバナー">
+        <br/>
+        </center>
+        
+        
+        
+    </body>
+
+</html>
+
+<script>
+    function time() {
+        var now = new Date();
+        mon = now.getMonth()+1; day = now.getDate();
+        hou = now.getHours(); min = now.getMinutes(); sec = now.getSeconds();
+        year = now.getYear();
+        if (year < 2000) { year += 1900; }
+        if (mon <= "9"){mon = "0" + mon;};
+        if (day <= "9"){day = "0" + day;};
+        if (hou <= "9"){hou = "0" + hou;};
+        if (min <= "9"){min = "0" + min;};
+        if (sec <= "9"){sec = "0" + sec;};
+        document.rt.tokei.value= year +"/"+ mon +"/"+ day +" "+ hou +":"+ min +":"+ sec;
+        setTimeout('time()',1000);
+    }
+
+function show(inputData) {
+    var objID=document.getElementById( "layer_" + inputData );
+    var buttonID=document.getElementById( "category_" + inputData );
+    if(objID.className=='close') {
+        objID.style.display='block';
+        objID.className='open';
+    }else{
+        objID.style.display='none';
+        objID.className='close';
+    }
+}
+
+$(function(){
+  $("ul.menu").hide();
+  $("div.category").click(function(){
+                          $("ul.menu").slideUp();
+                          if($("+ul",this).css("display")=="none"){
+                          $("+ul",this).slideDown();
+                          }
+                          });
+  });
+
+</script>
+
+
