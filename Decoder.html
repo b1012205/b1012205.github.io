@@ -146,7 +146,7 @@
             mmsiBINA = mmsiBINA + mmsiArray[i]; //ひとつの文字列にMMSI(2進数)を格納する
         }
         
-        if( mmsiBINA.substr(0,6) == 000001 || mmsiBINA.substr(0,6) == 000010 || mmsiBINA.substr(0,6) == 000011){
+        if( mmsiBINA.substr(0,6) == "000001" || mmsiBINA.substr(0,6) == "000010" || mmsiBINA.substr(0,6) == "000011"){
             //    document.form1.field1.value = "成功";
             repeat = mmsiBINA.substr(6,2); //リピートインジケータを取得
             mmsi = mmsiBINA.substr(8,30); //MMSI(2進数)を取得
@@ -231,10 +231,58 @@
             document.form1.heading.value = heading;
             document.form1.second.value = second;
             
-        }//type1~3終わり
-        
-        
-        
+            //type1~3終わり
+        }else if(mmsiBINA.substr(0,6) == "010010"){
+            //    document.form1.field1.value = "成功";
+            repeat = mmsiBINA.substr(6,2); //リピートインジケータを取得
+            mmsi = mmsiBINA.substr(8,30); //MMSI(2進数)を取得
+            mmsi = parseInt(mmsi,2).toString(10); //MMSI(10進数)を取得
+            
+            
+            speed = mmsiBINA.substr(46,10);
+            speed = parseInt(speed,2).toString(10);
+            speed = speed * 0.1; //スピードを取得(ノット)
+            /*
+             このとき、もしスピードが102.2であったら速度が102.2ノット以上であることを表す。
+             */
+            
+            accuracy = mmsiBINA.substr(56,1);
+            accuracy = parseInt(accuracy,2).toString(10); //誤差精度の取得
+            
+            lon = mmsiBINA.substr(57,28);
+            lon = parseInt(lon,2).toString(10);
+            lon = lon / 600000; //経度の取得
+            lon = roundCalc(lon,6,3);
+            
+            lat = mmsiBINA.substr(85,27);
+            lat = parseInt(lat,2).toString(10);
+            lat = lat / 600000; //緯度の取得
+            lat = roundCalc(lat,6,3);
+            
+            course = mmsiBINA.substr(112,12);
+            course = parseInt(course,2).toString(10); //真針路を取得
+            
+            heading = mmsiBINA.substr(124,9);
+            heading = parseInt(heading,2).toString(10); //頭角度を取得
+            
+            second = mmsiBINA.substr(133,6);
+            second = parseInt(second,2).toString(10); //タイムスタンプを取得(0~59)例外あり
+            
+            document.form1.type.value = mmsiHEX.substr(0,1);
+            document.form1.repeat.value = repeat;
+            document.form1.mmsi.value = mmsi;
+            document.form1.status.value = "unchi";
+            document.form1.turn.value = "unchi";
+            document.form1.speed.value = speed;
+            document.form1.accuracy.value = accuracy;
+            document.form1.lon.value = lon;
+            document.form1.lat.value = lat;
+            document.form1.course.value = course;
+            document.form1.heading.value = heading;
+            document.form1.second.value = second;
+            
+            //type18終わり
+        }
         
     }//function終わり
 
