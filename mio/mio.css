@@ -2,11 +2,11 @@
 
 /*共通*/
 body            {
-    background: black;
+    background: pink;
 }
 div#main        {
     margin: 10px auto;
-    background: #fff;
+    background: black;
     width: 650px;
     border: 1px solid #ccc;
     -webkit-box-shadow: 5px 5px 10px 2px #ccc;
