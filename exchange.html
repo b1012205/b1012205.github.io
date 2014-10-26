@@ -9,7 +9,7 @@
     
     <body>
         <center>
-        <p><span style="font-size:large; color:blue">非等価交換機(4パチ限定)</span></p>
+        <p><span style="font-size:large; color:blue">非等価交換機</span></p>
         
         <table border width="100%">
             <tr align="center">
@@ -65,14 +65,14 @@
         var dairate = document.form1.dairatefield.value;;//大文鎮レート
         var churate = document.form1.churatefield.value;;//中文鎮レート
         var shorate = document.form1.shoratefield.value;;//小文鎮レート
-        
+        var hitotamaikura = 100 / exchangerate;//1玉いくら
         
         result = Math.floor((ballsbefore / exchangerate) * 100);
         dai = Math.floor(result / dairate);
         chu = Math.floor((result - dai*dairate) / churate);
         sho = Math.floor((result - dai*dairate - chu*churate) / shorate);
         remoney = result - (dai*dairate + chu*churate + sho*shorate);
-        remainder = Math.floor(remoney / exchangerate);
+        remainder = Math.floor(remoney / hitotamaikura);
         
         document.form1.result.value = dai*dairate + chu*churate + sho*shorate + "円";
 
