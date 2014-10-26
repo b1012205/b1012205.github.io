@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+            <title>パチンカス変換機</title>
+            </head>
+    
+    <body>
+        <center>
+        <p><span style="font-size:large; color:blue">非等価交換機</span></p>
+        
+        <table border width="100%">
+            <tr align="center">
+                <th bgcolor="black"><font color="#f0f8ff">戦果入力</font></th>
+            </tr>
+            <tr align="center">
+                <td bgcolor="lightcyan"><br/><form method="GET" action="" name="form1" onSubmit="check();return false;">
+                    持ち玉数</br><input type="text" name="aivdmfield" value="" style="text-align: center; font-size:12px; width:50%; box-sizing: border-box;">玉<br/>
+                    <br/>
+                     <p><span style="font-size:small; color:blue">(以下オプション)</span></p>
+                    交換率</br>
+                    <input type="text" name="ratefield" value="28" style="text-align: center; font-size:12px; width:50%%; box-sizing: border-box;">玉交換</br>
+                    </br>特殊景品</br>
+                    大文鎮<input type="text" name="dairatefield" value="5000" style="text-align: center; font-size:12px; width:50%%; box-sizing: border-box;">円</br>
+                    中文鎮<input type="text" name="churatefield" value="2500" style="text-align: center; font-size:12px; width:50%%; box-sizing: border-box;">円</br>
+                    小文鎮<input type="text" name="shoratefield" value="500" style="text-align: center; font-size:12px; width:50%%; box-sizing: border-box;">円</br>
+                        
+                        
+                    <br/><input type="submit" value="送信">　<BUTTON type="reset">初期化</BUTTON>　</td>
+            </tr>
+        </table>
+</br>
+
+<table border="3" width="100%" cellpadding="3">
+    <tr align="center">
+        <th bgcolor="#00ffff" width="50%">換金後価格</th>
+        <td bgcolor="lightcyan"><input type="text" name="result" ReadOnly="TRUE" style="text-align: center; width:100%; box-sizing: border-box;"></td>
+    </tr>
+    <tr align="center">
+        <th bgcolor="#00ffff">余り玉数</th>
+        <td bgcolor="lightcyan"><input type="text" name="remainder" ReadOnly="TRUE" style="text-align: center; width:100%; box-sizing: border-box;"></td>
+    </tr>
+ </table>
+
+        </center>
+            </body>
+    
+    
+</html>
+
+<script>
+    function check(){
+        
+        var ballsbefore = document.form1.aivdmfield.value;
+        var result;
+        var remainder;//余り玉
+        var exchangerate = document.form1.ratefield.value;;//交換率
+        var dai;
+        var chu;
+        var sho;
+        var remoney;//余り金額
+        var current;
+        var dairate = document.form1.dairatefield.value;;//大文鎮レート
+        var churate = document.form1.churatefield.value;;//中文鎮レート
+        var shorate = document.form1.shoratefield.value;;//小文鎮レート
+        
+        
+        result = Math.floor((ballsbefore / exchangerate) * 100);
+        dai = Math.floor(result / dairate);
+        chu = Math.floor((result - dai*dairate) / churate);
+        sho = Math.floor((result - dai*dairate - chu*churate) / shorate);
+        remoney = result - (dai*dairate + chu*churate + sho*shorate);
+        remainder = Math.floor(remoney / exchangerate);
+        
+        document.form1.result.value = dai*dairate + chu*churate + sho*shorate + "円";
+
+            document.form1.remainder.value = remainder + "玉";
+            
+      }//function終わり
+
+</script>
+
+
