@@ -49,11 +49,24 @@
 
             </ul>
         </div>
-
-        
-        
-        
         </center>
+
+<A href="javaScript:treeMenu('treeMenu1')" style="text-decoration: none;">■ Yahoo! Japan1</a><br>
+<DIV id="treeMenu1" style="display:none">
+    ┣ <A href="http://www.yahoo.co.jp/" style="text-decoration: none;">Yahoo!</A><BR>
+    ┣ <A href="http://bb.yahoo.co.jp/" style="text-decoration: none;">Yahoo! BB</A><BR>
+    ┣ <A href="http://shopping.yahoo.co.jp/" style="text-decoration: none;">Yahoo! Shopping</A><BR>
+    ┗ <A href="http://auctions.yahoo.co.jp/" style="text-decoration: none;">Yahoo! Auctions</A><BR>
+</DIV>
+<A href="javaScript:treeMenu('treeMenu2')" style="text-decoration: none;">■ Yahoo! Japan2</a><br>
+<DIV id="treeMenu2" style="display:none">
+    ┣ <A href="http://www.yahoo.co.jp/"style="text-decoration: none;">Yahoo!</A><BR>
+    ┣ <A href="http://bb.yahoo.co.jp/" style="text-decoration: none;">Yahoo! BB</A><BR>
+    ┣ <A href="http://shopping.yahoo.co.jp/" style="text-decoration: none;">Yahoo! Shopping</A><BR>
+    ┗ <A href="http://auctions.yahoo.co.jp/" style="text-decoration: none;">Yahoo! Auctions</A><BR>
+</DIV>
+        
+        
         
 
 </html>
@@ -95,6 +108,15 @@ $(function(){
                           }
                           });
   });
+
+
+// ツリーメニュー
+flag = false;
+function treeMenu(tName) {
+    tMenu = document.all[tName].style;
+    if(tMenu.display == 'none') tMenu.display = "block";
+    else tMenu.display = "none";
+}
 
 </script>
 

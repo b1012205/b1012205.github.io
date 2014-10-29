@@ -29,7 +29,7 @@
         
         <!--
         日記の更新
-        -->
+        
         <div id="container">
             <ul class="navi">
                 
@@ -49,12 +49,26 @@
 
             </ul>
         </div>
+         -->
 
         
         
         
         </center>
         
+        <span style="position:relative; top:10px; left:40%">
+        <A href="javaScript:treeMenu('treeMenu1')" style="text-decoration: none;">■ ２０１４年１０月</a><br>
+        <DIV id="treeMenu1" style="display:none">
+            ┣ <A href="./day/141023.html" style="text-decoration: none;">23日 「HAYATO、国宝になる」</A><BR>
+            ┗ <A href="" style="text-decoration: none;">none</A><BR>
+        </DIV>
+        <A href="javaScript:treeMenu('treeMenu2')" style="text-decoration: none;">■ ２０１４年９月</a><br>
+        <DIV id="treeMenu2" style="display:none">
+            ┣ <A href="./day/140929.html"style="text-decoration: none;">29日 「HAYATO、寝過ごす」</A><BR>
+            ┗ <A href="" style="text-decoration: none;">none</A><BR>
+        </DIV>
+        </span>
+
 
 </html>
 
@@ -95,6 +109,15 @@ $(function(){
                           }
                           });
   });
+  
+  // ツリーメニュー
+  flag = false;
+  function treeMenu(tName) {
+      tMenu = document.all[tName].style;
+      if(tMenu.display == 'none') tMenu.display = "block";
+      else tMenu.display = "none";
+  }
+
 
 </script>
 
