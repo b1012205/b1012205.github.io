@@ -1,0 +1,314 @@
+<style type="text/css">
+
+#header {
+	height: 80px;
+	width: 1000px;
+}
+#middle_1 {
+	height: auto;
+	width: 800px;
+	text-align: center;
+}
+#middle_1_right {
+	height: 380px;
+	width: 540px;
+	float: right;
+	background-color: #66F;
+	text-align: left;
+}
+
+#header {
+	height: 80px;
+	width: 800px;
+}
+#header_left {
+	height: 80px;
+	width: 130px;
+	float: left;
+}
+#header_nabi {
+	float: right;
+	height: 80px;
+	width: 660px;
+	font-size: 12px;
+	font-weight: bold;
+}
+#middle_2 {
+	height: auto;
+	width: 800px;
+}
+#middle_2_left_3 {
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+}
+#middle_2_right {
+	float: left;
+	height: 210px;
+	width: 590px;
+}
+#middle_3 {
+	height: 10px;
+	width: 800px;
+}
+#footer {
+	height: auto;
+	width: auto;
+}
+#header_nabi_1 {
+	height: 40px;
+	width: 660px;
+	text-align: right;
+	font-weight: normal;
+	font-size: 10px;
+	color: #F09;
+}
+#header_nabi_2 {
+	height: 40px;
+	width: 220px;
+	text-align: right;
+	font-size: 10px;
+	font-weight: normal;
+	color: #F09;
+	float: left;
+}
+#header_nabi_3 {
+	height: 40px;
+	width: 420px;
+	text-align: right;
+	float: right;
+}
+#header_nabi_4 {
+	height: 18px;
+	width: 420px;
+	background-color: #FFF;
+	text-align: right;
+	color: #F09;
+	float: right;
+	font-size: 16px;
+	font-weight: bold;
+}
+#middle_0_1 {
+	height: 10px;
+	width: 800px;
+}
+#middle_0_2 {
+	height: 10px;
+	width: 800px;
+}
+#middle_0_0 {
+	height: 10px;
+	width: 800px;
+}
+#middle_0_3 {
+	height: 10px;
+	width: 800px;
+}
+#wrapper {
+	height: auto;
+	width: 800px;
+	margin: auto;
+}
+#middle_2_left_0 {
+	height: auto;
+	margin-bottom: 10px;
+}
+#middle_2_left_1 {
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+	font-size: 10px;
+}
+#middle_2_right_1 {
+	float: right;
+	height: auto;
+	width: 200px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #F00;
+}
+
+#middle_2_left_2 {
+	float: right;
+	height: 180px;
+	width: 295px;
+}
+#info {
+	font-size: 12px;
+}
+#header_nabi_5 {
+	font-size: 12px;
+	height: 40px;
+	width: 660px;
+	background-position: 640px 20px;
+	font-weight: normal;
+	text-align: right;
+}
+#header_nabi_6 {
+	font-size: 16px;
+	height: 20px;
+	width: 800px;
+	overflow: hidden;
+	visibility: inherit;
+}
+#header_nabi_3_1 {
+	width: 420px;
+	height: 22px;
+	font-size: 10px;
+	float: right;
+}
+#middle_2_left_2 {
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	background-color: #FFF;
+}
+#middle_2_left_3_left {
+	float: left;
+	height: auto;
+	width: 295px;
+}
+#middle_2_left_3_right {
+	float: right;
+	height: auto;
+	width: 295px;
+	text-align: right;
+}
+#middle_2_right_2 {
+	float: right;
+	height: auto;
+	width: 200px;
+	margin-bottom: 10px;
+}
+#middle_2_left_4 {
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 10px;
+}
+#middle_2_right_3 {
+	float: right;
+	height: auto;
+	width: 200px;
+	margin-bottom: 10px;
+}
+#support_middle_0_1 {
+	height: 16px;
+	width: 800px;
+	background-color: #F687BE;
+}
+#support_middle_2 {
+	height: auto;
+	width: 800px;
+	font-size: 12px;
+	color: #000;
+}
+#company_header {
+	height: 20px;
+	width: 800px;
+}
+#company_middle {
+	height: auto;
+	width: 800px;
+	font-size: 14px;
+}
+#products_gq_middle_2_left_2 {
+	float: left;
+	height: 850px;
+	width: 590px;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+	color: #FFF;
+	background-color: #FFF;
+}
+#lot_up {
+	font-size: 12px;
+	float: left;
+	width: 590px;
+}
+#index_main {
+	width: 800px;
+	font-size: 13px;
+	color: #F00;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+#index_main table {
+	text-align: center;
+}
+#middle_2_left_3 {
+	font-size: 12px;
+	color: #06F;
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+	text-align: center;
+}
+#middle_2 #middle_2_left_2 table tr td table {
+	color: #BC7E4E;
+	text-align: left;
+}
+#recruit {
+	color: #000;
+	float: left;
+	height: auto;
+	width: 590px;
+	font-size: 12px;
+}
+#wrapper #middle_2 #middle_2_left_2 table tr td table tr td ul li {
+	color: #BC7E4E;
+}
+#wrapper #middle_2 #middle_2_left_2 table tr td table tr td {
+	color: #BC7E4E;
+}
+#table {
+	color: #680F81;
+}
+#middle_2_left_2_pg {
+	float: left;
+	height: auto;
+	width: 590px;
+	font-size: 12px;
+	color: #FFF;
+}
+#wrapper #middle_2 #middle_2_left_2_pg table tr td table tr td {
+	color: #680F81;
+}
+
+#middle_2_left_4 {
+	font-size: 10px;
+	color: #000;
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+	text-align: center;
+	background-color: #FFF;
+}
+#link_middle_2_left_1 {
+	font-size: 10px;
+	float: left;
+	height: auto;
+	width: 590px;
+	margin-bottom: 6px;
+}
+#products_kaguya_middle_2_left_2 {
+	background-color: #FFF;
+	float: left;
+	height: 1200px;
+	width: 590px;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: center;
+}
