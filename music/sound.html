@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="robots" content="noindex,nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>HAYATOプレイヤー</title>
+		<!-- sound.jsの読み込み -->
+		<script src="./sound.js"></script>
+	</head>
+<body>
+
+<!-- テキストボタンの場合 -->
+<p><a onClick="sound();"><img src="./yaju.png" alt="クリックすると音が鳴ります。" title="クリックすると音が鳴ります。"/></a></p>
+ 
+<!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
+<audio id="sound-file" preload="auto">
+	<source src="./kawa.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
