@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-size:small;
+  font-family:'小塚ゴシック Pro6N R','メイリオ',Meiryo,'ＭＳ Ｐゴシック';
+  color:#808080;
+  background:#241263;
+}
+
+/* 上のバー */
+#bar{
+  width:100%;
+  height:60px;
+  background:#241263;
+}
+
+/* 次要素を右隣にくっつけさせる */
+.yokonarabi{
+  float:left;
+}
+
+/* google map部分 */
+#map-canvas{
+  width: 100%;
+  height: 90%;
+}
+
+/*-----------------------------bar中のボタンや文字-------------------------------------*/
+
+/*ロゴ*/
+#logo{
+  float:left;
+  margin-right:30px;
+  background:#241263;
+}
+
+.button1{
+  float:left;
+  padding: 0;
+  border:0;
+  margin:6px;
+  width:36px;
+  height:36px;
+  background:#8767ff;
+    /* 文字サイズを1.4emに指定
+  font-size: 14px;
+  */
+  /* 文字の太さをboldに指定
+  font-weight: bold;
+  */
+  /* 縦方向に10px、
+  * 横方向に30pxの余白を指定 */
+  padding: 5px 5px;
+
+  /* 文字色を白色に指定
+  color: #fff;
+  */
+  /* ボーダーをなくす */
+  border-style: none;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+    /* グラデーションの指定 */
+}
+
+.button1:hover {
+  /* 透明度を20%に指定 */
+  /*opacity: 0.8;*/
+  background:#af99ff;
+}
+
+
+#focus-btn{
+  position: absolute;
+  float:left;
+  margin:6px;
+  left:calc(100% - 80px);
+  top:calc(100% - 80px);
+  /*background:#209ce9;*/
+  background: #241263;
+
+  width:36px;
+  height:36px;
+  /* 文字サイズを1.4emに指定 */
+  font-size: 14px;
+
+  /* 文字の太さをboldに指定 */
+  font-weight: bold;
+
+    /* 縦方向に10px、
+    * 横方向に30pxの余白を指定 */
+    padding: 5px 4px;
+
+    /* 文字色を白色に指定 */
+    color: #fff;
+
+    /* ボーダーをなくす */
+    border-style: none;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    /* グラデーションの指定 */
+}
+#focus-btn:hover {
+  /* 透明度を20%に指定 */
+  opacity: 0.8;
+  /*background:#af99ff;*/
+
+}
+
+.icon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#time{
+  margin:20px;
+  font-size: 20px;
+  font-weight: 900;
+  background:#241263;
+  color:#fff;
+  float:left;
+}
+
+/*LIVE*/
+#live{
+  margin:11px;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1em;
+
+  background:#241263;
+  color:#fff;
+  float:right;
+}
+
+.shipicon{
+  transform: rotate(90deg);
+}
+
+/*---------------------------ログデータへ行くダイアログ------------------------------------*/
+
+/*#dialog-link {
+    padding: .4em 1em .4em 20px;
+    text-decoration: none;
+    position: relative;
+  }*/
+  /*
+#dialog-link span.ui-icon {
+    margin: 0 5px 0 0;
+    position: absolute;
+    left: .2em;
+    top: 50%;
+    margin-top: -8px;
+  }
+  */
+/*#icons {
+    margin: 0;
+    padding: 0;
+  }*/
+  /*
+#icons li {
+  margin: 2px;
+  position: relative;
+  padding: 4px 0;
+  cursor: pointer;
+  float: left;
+  list-style: none;
+  }
+*/
+/*#icons span.ui-icon {
+  float: left;
+  margin: 0 4px;
+  }*/
+/*.fakewindowcontain .ui-widget-overlay {
+  position: absolute;
+  }
+select {
+  width: 200px;
+  }
+*/
+
+/*-----------------------------船舶情報表示欄--------------------------------------*/
+
+aside{
+  position: absolute;
+  font-size:12px;
+  background:#241263;
+  color:#000;
+  width:190px;
+  left: -200px;
+  top:50%;
+  height:220px;
+  position:fixed;
+  border-top-right-radius: 5px;
+ border-bottom-right-radius: 5px
+}
+
+#shipinfo{
+  position:absolute;
+  padding-left:10px;
+  width: 190px;
+  left: 0px;
+  top: 0px;
+  height:220px;
+  color:#fff;
+  background:#241263;
+  border-top-right-radius: 5px;
+ border-bottom-right-radius: 5px
+}
+
+ #hune{
+  display: block;
+  position:absolute;
+  border:none;
+  background:#241263;
+  color:#fff;
+  padding: 0;
+  margin: 0;
+  top:15px;
+  left:200px;
+  width:20px;
+  height:50px;
+  font-size: 20px;
+  line-height:50px;
+
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px
+}
+
+#shipimg{
+	margin-top:10px;
+}
+
+/*----------検索ボタンにカーソルが合った時----------*/
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus{
+  border:1px solid #87cefa;
+  background: #87cefa;
+  font-weight:bold;
+  color:#00008b;
+}

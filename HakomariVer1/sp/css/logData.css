@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+
+html,body{
+  width: 100%;
+  /*height: 760px;*/
+  height:109%;
+}
+
+body{
+	margin:0;
+	padding:0;
+	font-size:small;
+	background:#fff;
+	color:#808080;
+}
+
+#bar{
+  width:100%;
+ /*  height:60px;*/
+  height:9%;
+  background:#ff7f00;
+}
+
+
+/* 次要素を右隣にくっつけさせる */
+.yokonarabi{
+  float:left;
+}
+
+/* google map部分 */
+#map-canvas{
+  width: 100%;
+ height: 700px;
+
+}
+
+/*--ページの枠組み--*/
+
+#main{
+	margin:0 auto;
+	width:100%;
+}
+
+
+
+#logo{
+	float:left;
+	background:#ff7f00;
+	/*background:#241263;*/
+}
+
+/*ログデータの時間変更部分*/
+#time{
+  float:left;
+  margin:12px;
+  color:#000;
+  background:#ff7f00;
+}
+
+.button1{
+	float:left;
+	margin:12px;
+	margin-bottom: 0;
+	background:#000;
+	/*background:#209ce9;*/
+    /* 文字サイズを1.4emに指定 
+	font-size: 14px;
+	*/
+	/* 文字の太さをboldに指定 
+	font-weight: bold;
+	*/
+	/* 縦方向に10px、
+	* 横方向に30pxの余白を指定 */
+	padding: 10px 10px;
+
+	/*文字色を白色に指定*/ 
+	color: #fff;
+	
+	/* ボーダーをなくす */
+	border-style: none;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    /* グラデーションの指定 */
+}
+
+.button1:hover {
+	/* 透明度を20%に指定 */
+	/*opacity: 0.8;*/
+	background:#54c9ff;
+}
+
+.unable-btn{
+  background:#AAA;
+}
+
+/*現在に戻るボタン仕様*/
+#return{
+	position: fixed;
+	left:1200px;
+	top:100px;
+	float:right;
+	margin:12px;
+	width:70px;
+	height:40px;
+	font-weight:bold;
+	background:#000;
+	color:#fff;
+	border-style:none;
+	border-radius: 5px;
+}
+#return:hover {
+	/* 透明度を20%に指定 */
+	/*opacity: 0.8;*/
+	background:#54c9ff;
+}
+
+/*ログデータの時間*/
+#logtime{
+	margin:20px;
+	font: 20px "MS Pゴシック";
+	font-weight: 900;  
+	
+	/*background:#241263;*/
+	color:#000;
+	float:left;
+}

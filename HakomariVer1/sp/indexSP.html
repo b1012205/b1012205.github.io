@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+  <title>はこだてマリンLIVE(α)</title>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDT0FEcTus-ZjEfuFplwct1rHF1BzdIIns&sensor=(true or false)"></script>
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <link rel='stylesheet' href="css/jquery-ui.css">
+  <link rel='stylesheet' href="css/jquery-ui.structure.min.css">
+  <link rel='stylesheet' href="css/jquery-ui.theme.min.css">
+  <link href="css/smart.css" rel="stylesheet" type="text/css" >
+  <script src="js/googleMapIni.js"></script>
+ 
+</head>
+<body onload="initialize()">
+ <div id="map-canvas"></div>
+ 
+  <div id="smartbar">
+    <div id="filter-btn" type="button" class="button1 navi-bottom" title="船舶を絞り込みます"><img src="btn-icon/filter.png" width="21px" height="28px" class="icon"></div>
+    <!--div id="stop-btn" type="button" class="button1 navi-bottom" title="停止"><img src="button/stop.png" width="36px" height="36px" class="icon"></div-->
+    <!--input type="button" class="button1" value="検索">
+    <img src="button/stop.png" class="button1" width="25px" height="25px"--> 
+	  <div id ="live">LIVE</div>
+    <div id="barbutton">↓</div>
+  </div><!--bar-->
+
+  <div id="search-dialog" title="検索">
+    <form id = "filter" name = "filter">
+      <fieldset>
+        <label for = "種類:">種類: </label><br/>
+        <input type = "checkbox" name="kind" checked>客船
+        <input type = "checkbox" name="kind" checked>貨物船
+        <input type = "checkbox" name="kind" checked>タンカー<br/>
+        <input type = "checkbox" name="kind" checked>釣り船
+        <input type = "checkbox" name="kind" checked>遊覧船
+        <input type = "checkbox" name="kind" checked>タグボート<br/>
+        <input type = "checkbox" name="kind" checked>高速船
+        <input type = "checkbox" name="kind" checked>捜索救助船
+        <br/>
+        <label for = "速さ: ">速さ: </label><br/>
+        <input type = "text" id = "fromspeed" name="fromspeed" size="3">kt～
+        <input type = "text" id="tospeed" name="tospeed" size="3">kt<br/>
+      </fieldset>
+    </form>
+  </div>
+
+<div id="focus-btn" onclick="setCenter()" class="focus navi-left" title="選択中の船舶へ"><img src="btn-icon/center.png" width="36px" height="36px"></div>
+
+  <aside>
+    <div id="shipinfo">
+   　 <img src="photo/UnKnown.jpg" id ="shipimg" width="150px" height="60px"></img>
+      <div id="mmsi">識別番号: 0000000000000</div>
+      <div id="name">船名: 不明</div>
+      <div id="type">種類: 不明</div>
+      <div id="lat">緯度: 1.0</div>
+      <div id="lng">経度: 1.0</div>
+      <div id="dir">針路: 0</div>
+      <div id="velocity">速度: 0</div>
+
+    </div><!--shipinfo-->
+ <div id="hune">></div>
+  </aside>
+
+  <!--この呼び出し順はけっこう重要なので変えないで-->
+  <script src="js/aside.js"></script>
+  <script src="js/sbar.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/searchDialog.js"></script>
+</body>
+</html>

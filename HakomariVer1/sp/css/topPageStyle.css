@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+html,body{
+  width: 100%;
+  /*height: 760px;*/
+  height:109%;
+
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-size:small;
+  color:#808080;
+  background:#fff;
+}
+
+/* 上のバー */
+#bar{
+  width:100%;
+ /*  height:60px;*/
+  height:8%;
+  background:#241263;
+}
+
+
+/* 次要素を右隣にくっつけさせる */
+.yokonarabi{
+  float:left;
+}
+
+/* google map部分 */
+#map-canvas{
+  width: 100%;
+ height: 700px;
+
+}
+
+/*-----------------------------bar中のボタンや文字-------------------------------------*/
+
+/*ロゴ*/
+#logo{
+  float:left;
+  background:#241263;
+}
+
+.button1{
+  float:left;
+  margin:7px;
+  background:#209ce9;
+  /* 文字サイズを1.4emに指定 */
+  font-size: 14px;
+
+  width: 40px;
+  height: 40px;
+  
+  /* 文字の太さをboldに指定 */
+  font-weight: bold;
+  
+  /* 縦方向に10px、
+  * 横方向に30pxの余白を指定 */
+  padding: 10px 10px;
+
+  /* 文字色を白色に指定*/ 
+  color: #fff;
+  
+  /* ボーダーをなくす */
+  border-style: none;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+    /* グラデーションの指定 */
+}
+
+.button1:hover {
+  /* 透明度を20%に指定 */
+  /*opacity: 0.8;*/
+  background:#54c9ff;
+}
+
+#button2{
+  float:left;
+  margin:12px;
+  background:#209ce9;
+  
+  /* 文字サイズを1.4emに指定 */
+  font-size: 14px;
+
+  /* 文字の太さをboldに指定 */
+  font-weight: bold;
+
+  /* 縦方向に10px、
+  * 横方向に30pxの余白を指定 */
+  padding: 10px 10px;
+
+  /* 文字色を白色に指定 */
+  color: #fff;
+
+  /* ボーダーをなくす */
+  border-style: none;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+    /* グラデーションの指定 */
+}
+#button2:hover {
+  /* 透明度を20%に指定 */
+  /*opacity: 0.8;*/
+  background:#54c9ff;
+
+}
+
+#time{
+  margin:20px;
+  font: 20px "MS Pゴシック";
+  font-weight: 900;  
+  background:#241263;
+  color:#fff;
+  float:left;
+}
+
+/*LIVE*/
+#live{
+  margin:15px;
+  font: 26px "MS Pゴシック";
+  font-weight: bold;
+  letter-spacing: 1em;
+  
+  background:#241263;
+  color:#fff;
+  float:right;
+}
+
+/*---------------------------ログデータへ行くダイアログ------------------------------------*/
+
+/*#dialog-link {
+    padding: .4em 1em .4em 20px;
+    text-decoration: none;
+    position: relative;
+  }*/
+#dialog-link span.ui-icon {
+    margin: 0 5px 0 0;
+    position: absolute;
+    left: .2em;
+    top: 50%;
+    margin-top: -8px;
+  }
+/*#icons {
+    margin: 0;
+    padding: 0;
+  }*/
+#icons li {
+  margin: 2px;
+  position: relative;
+  padding: 4px 0;
+  cursor: pointer;
+  float: left;
+  list-style: none;
+  }
+
+/*#icons span.ui-icon {
+  float: left;
+  margin: 0 4px;
+  }*/
+/*.fakewindowcontain .ui-widget-overlay {
+  position: absolute;
+  }
+select {
+  width: 200px;
+  }
+*/
+
+
+/*-----------------------------船舶情報表示欄--------------------------------------*/
+
+aside{
+  font-size:12px;
+  background:#fff;
+  color:#000;
+  width: 205px;
+  left: -170px;
+  top:350px;
+  height:130px;
+  position:fixed;
+}
+
+#shipinfo{
+  position:absolute;
+  width: 170px;
+  left: 0px;
+  top: 0px;
+  height:130px;
+}
+/*-----------やじるしボックス-------------*/
+#Info{
+  display: block;
+  position:absolute;
+  border:none;
+  padding: 0;
+  margin: 0;
+  top:0px;
+  left:170px;
+  width:35px;
+  height:130px;
+  font-size: 20px;
+}
+
+
+

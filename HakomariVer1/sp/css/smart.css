@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+html,body{
+  width: 100%;
+  height:100%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-size:small;
+  color:#808080;
+  background:#fff;
+}
+
+
+/* 次要素を右隣にくっつけさせる */
+.yokonarabi{
+  float:left;
+}
+
+/* google map部分 */
+#map-canvas{
+  width: 100%;
+/*height: 470px;*/
+height:100%;
+position:absolute;
+}
+
+
+section{
+  background:#000;
+  color:#000;
+  width:100%;
+  top: 0%;
+  position:fixed;
+}
+
+/*バーの大きさと色*/
+#smartbar{
+width:100%;
+height:10%;
+position:absolute;
+top:-10%;
+background:#241263;
+}
+
+
+/*バーを上下させるボタン*/
+#barbutton{
+display:block;
+ position:absolute;
+ top: 100%;
+ right:0%;
+ width:35px;
+ height:35px;
+ font-size: 20px;
+ background:#241263;
+ color:#fff;
+ border-radius:10%;
+}
+
+
+/*-----------------------------bar中のボタンや文字-------------------------------------*/
+
+
+.button1{
+  float:left;
+  margin:1%;
+  background:#209ce9;
+  position:relative;
+    /* 文字サイズを1.4emに指定 */
+  font-size: 14px;
+  /* 文字の太さをboldに指定 */
+  font-weight: bold;
+  /* 余白を指定 */
+  padding: 1.5% 3%;
+  /* 文字色を白色に指定*/ 
+  color: #fff;
+  /* ボーダーをなくす */
+  border-style: none;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+    /* グラデーションの指定 */
+}
+
+.button1:hover {
+  /* 透明度を20%に指定 */
+  /*opacity: 0.8;*/
+  background:#54c9ff;
+}
+
+/*LIVE*/
+#live{
+  margin:7px;
+  font: 20px "MS Pゴシック";
+  font-weight: bold;
+  letter-spacing: 1em;
+  color:#fff;
+  float:right;
+  
+}
+
+
+/*-----------------------------船舶情報表示欄--------------------------------------*/
+
+aside{
+  font-size:12px;
+  background:#241263;
+  color:#000;
+  width:190px;
+  left: -200px;
+  top:240px;
+  height:200px;
+  position:fixed;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px
+}
+
+#shipinfo{
+  position:absolute;
+  padding-left:10px;
+  width: 190px;
+  left: 0px;
+  top: 0px;
+  height:220px;
+  color:#fff;
+  background:#241263;
+  border-top-right-radius: 5px;
+ border-bottom-right-radius: 5px
+}
+
+ #hune{
+  display: block;
+  position:absolute;
+  border:none;
+  background:#241263;
+  color:#fff;
+  padding: 0;
+  margin: 0;
+  top:15px;
+  left:200px;
+  width:20px;
+  height:50px;
+  font-size: 20px;
+  line-height:50px;
+
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px
+}
+
+#shipimg{
+  margin-top:10px;
+}
+
+/*-----------やじるしボックス------------*/
+#Info{
+  display: block;
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  /*top:0px;*/
+  left:170px;
+  width:35px;
+  height:35px;
+  border-radius:10%;
+  font-size: 20px;
+  background:#fff;
+}
