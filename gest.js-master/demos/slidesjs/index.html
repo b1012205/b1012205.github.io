@@ -173,9 +173,10 @@
 				document.addEventListener('gest', function(gesture) {
 					if (gesture.left) {
 						$('.slidesjs-next').trigger('click');
+                        document.getElementById("sound-file").play();
 					} else if (gesture.right) {
 						$('.slidesjs-previous').trigger('click');
-					}
+                        document.getElementById("sound-file").play();					}
 				}, false);
 
 				gest.start();
@@ -184,5 +185,11 @@
 		</script>
 		<!-- End SlidesJS Required -->
 
+            <audio id="sound-file" preload="auto">
+            <source src="kawa.mp3" type="audio/mp3">
+            </audio>
+
+
 	</body>
+    
 </html>
