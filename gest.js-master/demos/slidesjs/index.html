@@ -178,7 +178,11 @@ document.getElementById("sound-file").currentTime = 0;
 					} else if (gesture.right) {
 						$('.slidesjs-previous').trigger('click');
 document.getElementById("sound-file2").currentTime = 0;
-                        document.getElementById("sound-file2").play();					}
+                                          document.getElementById("sound-file2").play();					}else if(gesture.up){
+                                          document.getElementById("sound-file3").currentTime = 0;
+                                          document.getElementById("sound-file3").play();
+                                          
+                                          }
 				}, false);
 
 				gest.start();
@@ -194,6 +198,10 @@ document.getElementById("sound-file2").currentTime = 0;
             <audio id="sound-file2" preload="auto">
                 <source src="isi.mp3" type="audio/mp3">
                     </audio>
+
+<audio id="sound-file3" preload="auto">
+    <source src="kincho.mp3" type="audio/mp3">
+        </audio>
 
 
 	</body>
