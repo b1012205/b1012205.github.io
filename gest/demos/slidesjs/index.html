@@ -173,14 +173,9 @@
 				document.addEventListener('gest', function(gesture) {
 					if (gesture.left) {
 						$('.slidesjs-next').trigger('click');
-document.getElementById("sound-file").currentTime = 0;
-                        document.getElementById("sound-file").play();
 					} else if (gesture.right) {
 						$('.slidesjs-previous').trigger('click');
-document.getElementById("sound-file2").currentTime = 0;
-                                          document.getElementById("sound-file2").play();					}else if(gesture.up){
-                                          document.getElementById("sound-file3").currentTime = 0;
-                                          document.getElementById("sound-file3").play();
+                                            }else if(gesture.up){
                                           
                                           }
 				}, false);
