@@ -39,7 +39,7 @@ window.gest = (function (window) {
 		framerate: 25,
 		videoCompressionRate: 4,
 		sensitivity: 80,	//value from 0 to 100 (100 => very sensitive)
-		skinFilter: false,
+		skinFilter: true,
 		debug: {
 			state: false,
 			canvas: null,
